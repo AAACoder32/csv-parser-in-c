@@ -1,2 +1,2 @@
 ## CSV Parser Implementation In C Using LL(1) Parser
-It is just fun project for learnig.
+It is just fun project for learning.
