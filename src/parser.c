@@ -22,7 +22,6 @@ const char *LL1_TABLE[12][6] =
 
 VAR_LIST *extract_var(const char *input)
 {
-    // printf("Inside extract_var:\n");
     int count = 0;
     VAR_LIST *head = NULL;
 
@@ -33,7 +32,6 @@ VAR_LIST *extract_var(const char *input)
 
     if (*ptr == '<')
     {
-        // printf("Inside if->%c\n", *ptr);
         append_char(str, *ptr);
         ptr++;
         while (*ptr != '>')
@@ -43,14 +41,11 @@ VAR_LIST *extract_var(const char *input)
         }
         append_char(str, *ptr);
         null_terminate(str);
-        // printf("Inside if->%s\n", str->data);
         (ptr)++;
-        // printf("Inside if->%c\n", *ptr);
         count++;
     }
     else
     {
-        // printf("Inside else->%c\n", *ptr);
         (ptr)++;
     }
 
@@ -64,10 +59,8 @@ VAR_LIST *extract_var(const char *input)
 
     while (*ptr != '\0')
     {
-        // printf("Inside while loop->\n");
         if (*ptr == '<')
         {
-            // printf("Inside if->%c\n", *ptr);
             append_char(str, *ptr);
             (ptr)++;
             while (*ptr != '>')
@@ -77,14 +70,11 @@ VAR_LIST *extract_var(const char *input)
             }
             append_char(str, *ptr);
             null_terminate(str);
-            // printf("Inside if->%s\n", str->data);
             (ptr)++;
-            // printf("Inside if->%c\n", *ptr);
             count++;
         }
         else
         {
-            // printf("Inside else->%c\n", *ptr);
             (ptr)++;
         }
         if (count == 2)
@@ -105,10 +95,8 @@ VAR_LIST *extract_var(const char *input)
         }
         str = NULL;
         str = create_str();
-        // if (temp != NULL)
-        //     printf("temp->%s\n", temp->str);
     }
-    // printf("----End----\n");
+    
     if (count == 1)
     {
         return head;
@@ -205,18 +193,6 @@ int parse(LIST *head)
                 production = production->prev;
             }
         }
-        // STACK *t = S_TOP;
-        // if (t == NULL)
-        // {
-        //     printf("NULL\n");
-        // }
-        // printf("S-------------\n");
-        // while (t != NULL)
-        // {
-        //     printf("%s\n", t->value);
-        //     t = t->next;
-        // }
-        // printf("E-------------\n");
     }
     if (isempty_str() && temp == NULL)
     {

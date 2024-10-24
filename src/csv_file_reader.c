@@ -69,10 +69,6 @@ String *get_one_line(FILE *ptr)
 
 STR_LIST *get_csv_data(FILE *ptr, int max_line)
 {
-    // STR_LIST *head = (STR_LIST*)malloc(sizeof(STR_LIST));
-    // int count = 0;
-    // String *str = get_one_line(ptr);
-    
     while (fgetc(ptr) != EOF)
     {
         
